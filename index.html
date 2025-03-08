@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>с 8 марта!</title>
+   <style>
+       body {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           margin: 0;
+           background-color: #fafafa;
+           font-family: 'IBM Plex Mono', serif;
+       }
+
+       .card {
+           text-align: center;
+           padding: 40px;
+           border-radius: 15px;
+           background-color: #fff;
+           box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+           width: 350px;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .header {
+           font-size: 32px;
+           color: #9c27b0;
+           font-weight: bold;
+           margin-bottom: 20px;
+           opacity: 0;
+           animation: fadeIn 2s forwards;
+           font-family: 'IBM Plex Mono', serif;
+
+       }
+
+       .message {
+           font-size: 14px;
+           color: #555;
+           opacity: 0;
+           animation: fadeIn 2s forwards 1s;
+       }
+
+       .flowers {
+           font-size: 40px;
+           color: #9c27b0;
+           margin-top: 20px;
+           animation: flowersAnim 3s ease-in-out infinite;
+           opacity: 0;
+           animation-delay: 2s;
+       }
+
+       .time-info {
+           font-size: 14px;
+           color: #777;
+           margin-top: 20px;
+           font-style: italic;
+           opacity: 0;
+           animation: fadeIn 2s forwards 2s;
+       }
+
+       @keyframes fadeIn {
+           0% { opacity: 0; }
+           100% { opacity: 1; }
+       }
+
+       @keyframes flowersAnim {
+           0% {
+               transform: scale(0.7);
+               opacity: 0;
+           }
+           50% {
+               transform: scale(1);
+               opacity: 1;
+           }
+           100% {
+               transform: scale(0.7);
+               opacity: 0;
+           }
+       }
+
+       .footer {
+           font-size: 10px;
+           color: #888;
+           margin-top: 20px;
+       }
+   </style>
+</head>
+<body>
+   <div class="card">
+       <div class="header">с 8 марта!</div>
+       <div class="message">ты — как весна, которая приходит и наполняет мир новым светом, пробуждает всё вокруг и заставляет сердце биться быстрее.</div>
+       <div class="message">ты как свет далёкой звезды, освещаешь даже самые тёмные уголки, и я не могу не восхищаться этим.</div>
+       <div class="message">ты редкая звезда в созвездии, которой ещё нет в моем атласе, но которую я уже не могу не искать.</div>
+       <div class="message">ты особенная, и этот день (и не только) — твой.</div>
+       <div class="message">пусть каждый момент будет полон радости и вдохновения! а жизнь — такой же красивой, как ночное небо, полное звёзд.</div>
+       <div class="message">ты заслуживаешь только лучшего.</div>
+       <div class="message">с праздником!)</div>
+       <div class="flowers">🌸🌷🌼</div>
+       <div class="time-info">
+           <!-- Вставка динамического времени и подсчёта секунд -->
+           <p id="time"></p>
+           <p id="seconds"></p>
+       </div>
+       <div class="footer">просто человек, который заметил твоё присутствие и не может забыть</div>
+   </div>
+
+   <script>
+       // Функция для обновления времени и подсчета секунд
+       function updateTime() {
+           const now = new Date();
+           const hours = now.getHours();
+           const minutes = now.getMinutes();
+           const seconds = now.getSeconds();
+
+           // Текущее время
+           const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+           document.getElementById('time').textContent = `текущее время: ${timeString}`;
+
+           // Количество секунд с полуночи
+           const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+           document.getElementById('seconds').textContent = `а столько раз я уже подумал о тебе сегодня: ${totalSeconds}`;
+       }
+
+       // Обновлять время каждую секунду
+       setInterval(updateTime, 1000);
+   </script>
+</body>
+</html>
+

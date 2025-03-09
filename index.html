@@ -91,7 +91,7 @@
 </head>
 <body>
    <div class="card">
-       <div class="header">с 8 марта!</div>
+       <div class="header">Дари, с 8 марта!</div>
        <div class="message">ты как весна, которая приходит и наполняет мир новым светом, пробуждает всё вокруг и заставляет сердце биться быстрее.</div>
        <div class="message">ты как свет далёкой звезды, освещаешь даже самые тёмные уголки, и я не могу не восхищаться этим.</div>
        <div class="message">ты редкая звезда в созвездии, которой ещё нет в моем атласе, но которую я уже не могу не искать.</div>
@@ -118,11 +118,11 @@
 
            // Текущее время
            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-           document.getElementById('time').textContent = `текущее время: ${timeString}`;
+           document.getElementById('time').textContent = `сейчас на часах ${timeString}`;
 
            // Количество секунд с полуночи
            const totalSeconds = hours * 3600 + minutes * 60 + seconds;
-           document.getElementById('seconds').textContent = `а столько раз я уже подумал о тебе сегодня: ${totalSeconds}`;
+           document.getElementById('seconds').textContent = `а это значит, что сегодня я подумал о тебе ${totalSeconds} раз`;
        }
 
        // Обновлять время каждую секунду
